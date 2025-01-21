@@ -7,6 +7,12 @@ app.get('/users', (req, res) => {
   res.send('GET /users');
 });
 
+app.get('/hello', (req, res) => {
+  const name = req.query.name;
+  const message = name ? `Hello, ${name}!` : 'Hello, World!';
+  res.send(message);
+});
+
 app.post('/users', (req, res) => {
   res.send('POST /users');
 });
